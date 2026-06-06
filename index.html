@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>mon portfolio</title>
+<link rel="stylesheet" href="style.css">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<nav>
+  <div class="container">
+    <div class="logo"><img src="mon-logos.png" height="30">  Mon portfolio</div>
+    <div class="nav-links">
+      <a href="#projets">Projets</a>
+      <a href="#competences">Compétences</a>
+      <a href="#about">À propos</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero container">
+  <div>
+    <h2>Salut, je suis</h2><h1>MONENTYAM FARRELL<br><span class="gradient-text">un passionné de l'informatique</span></h1>
+    <p>passionné  des differents langages de programmation, concepteur web, actuellement etudiant a l'IUT de DOUALA en filiere Genie Informatique; Mon experdise consiste a creer des sites webs attrayants et conviviaux, ainsi que des maquettes completes pour vos applications et sites. passionné par le code et le design, j'ai le sens du detail et bien plus encore...</p>
+    <a href="#contact" class="btn">Discutons de votre projet</a>
+  </div>
+  <img src="fa.jpg" alt="Photo" class="hero-img">
+</section>
+
+<section id="projets" class="container">
+  <h2 class="section-title">Réalisations</h2>
+  <p class="section-subtitle">3 projets qui prouvent mon expertise terrain</p>
+  <div class="grid">
+    <div class="card">
+      <h3>GUIDME</h3>
+      <p>Site web de guide touristique en ligne.</p>
+      <a href="guidme/index.html"><span class="tag">GUIDME</span></a>
+    </div>
+    <div class="card">
+      <h3>IUT_CAMEROUN</h3>
+      <p>Presentation des differents campus que possede IUT au CAMEROUN.</p>
+      <a href="iut-cameroun/index.html"><span class="tag">IUT_CAMEROUN</span></a>
+    </div>
+    <div class="card">
+      <h3>PROTOTYPE PORTFOLIO ACTUEL</h3>
+      <p>ici il sagit d'une maquette/d'un prototype de ce portfolio.</p>
+      <a href="portfolio.free"><span class="tag">prototype</span></a>
+    </div>
+  </div>
+</section>
+
+<!-- SECTION COMPÉTENCES FUSIONNÉE -->
+<section id="competences" class="container">
+  <h2 class="section-title">Compétences</h2>
+  <p class="section-subtitle">Mes langages & outils de travail</p>
+  
+  <div class="skills-grid">
+    <div class="skill">
+      <div class="skill-header">
+        <span>HTML</span>
+        <span class="skill-percent">95%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-width="95"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>CSS</span>
+        <span class="skill-percent">73%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-width="73"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>JAVASCRIPT</span>
+        <span class="skill-percent">68%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-width="68"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>Python</span>
+        <span class="skill-percent">60%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-width="60"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>FIGMA</span>
+        <span class="skill-percent">85%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-width="85"></div>
+      </div>
+    </div>
+
+    <div class="skill">
+      <div class="skill-header">
+        <span>VISUAL STUDIO CODE</span>
+        <span class="skill-percent">96%</span>
+      </div>
+      <div class="skill-bar">
+        <div class="skill-progress" data-width="96"></div>
+      </div>
+    </div>
+  </div>
+</section>
+<br>
+<section id="about" class="container">
+  <h2 class="section-title">À propos</h2>
+  <p class="section-subtitle" style="max-width:750px;margin:0 auto;text-align:center">
+    Etudiant a l'IUT de DOUALA avec 1 ans d’experience dans ce domaine. Certifié DEVIA TECHNOLOGIE. 
+    Je conçois et sécurise des sites webs pour entreprises qui ne peuvent pas se permettre de tomber.
+  </p>
+</section>
+
+<section id="contact" class="contact container">
+  <h2 class="section-title">Contact</h2>
+  <p class="section-subtitle">Disponible pour audit, conseil et missions</p>
+  <div class="contact-icons">
+    <a href="mailto:monentyamfarrell@gmail.com?subject=contact%20depuis%20portfolio">📧 Email</a>
+    <a href="https://wa.me/237695665573?text=Bonjour%20je%20vous%20contacte%20via%20votre%20portfolio" target="_blank">💬 WhatsApp</a>
+    <a href="https://linkedin.com/in/tonprofil">💼 LinkedIn</a>
+    <a href="https://github.com/monentyamfarrell-bit">💻 GitHub</a>
+  </div>
+</section>
+
+<footer>© 2026 MONENTYAM FARRELL • Fait avec passion</footer>
+
+<script>
+// Animation barres compétences au scroll
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if(entry.isIntersecting){
+      const bars = entry.target.querySelectorAll('.skill-progress');
+      bars.forEach((bar, i) => {
+        const width = bar.getAttribute('data-width');
+        setTimeout(() => bar.style.width = width + '%', 200 + i*100);
+      });
+      observer.unobserve(entry.target);
+    }
+  });
+}, {threshold: 0.5});
+
+document.querySelectorAll('#competences').forEach(sec => observer.observe(sec));
+</script>
+
+</body>
+</html>
